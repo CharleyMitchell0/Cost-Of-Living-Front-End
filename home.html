@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+
+    <link rel="icon" type="image/x-icon" href="images/logo.png">  <!-- Favicon- the icon shown in the tab of the webpage-->
+
+    <title>Cost of Living Support Page</title>
+
+</head>
+
+<body>
+
+  
+
+  <div id="header"> <!--The whole section for the top including nav-bar-->
+
+    <div id="logo-section">
+
+        <a href="home.html"><img src="images/logo.png" ></a>
+
+        <div id="names">
+            <h1>Bankety Bank</h1>
+
+            <p>Helping you bankety your bank</p>
+        </div>
+
+    </div>
+
+    
+
+    <ul id="nav-bar">
+        
+        <li><a href="home.html" >Home</a></li>
+
+        <li><a href="home.html">About</a></li>
+
+        <li id="support-button"><a href="home.html">Get Support</a></li>
+
+    </ul>
+</div>
+
+
+  <div class="title boxShadow">
+        <h1>Cost of Living Support</h1>       
+  </div>
+ 
+
+<div class="supportContainer">
+
+  <div  class="supportBox boxShadow"> 
+    <a href="wellbeing.html">
+      <img class="supportImage" src="images/wellbeing.png" alt="Mental Health & Wellbeing Illustration">
+     <p>Mental Health & Wellbeing</p>
+    </a>
+  </div>
+
+<div  class="supportBox boxShadow"> 
+    <a href="budgeting.html">
+      <img class="supportImage" src="images/piggyBank.png" alt="Budget & Spending Illustration">
+      <p>Budget & Spending</p>
+    </a>
+  </div>
+
+  <div  class="supportBox boxShadow"> 
+    <a href="debt.html">
+      <img class="supportImage" src="images/debt.png" alt="Debt Management Illustration">
+      <p>Debt Management</p>
+    </a>
+  </div>
+
+  
+
+  <div  class="supportBox boxShadow"> 
+    <a href="energyBills.html">
+      <img class="supportImage" src="images/energyBills.png" alt="Energy Bills Illustration">
+      <p>Energy Bills</p>
+  </a>
+  </div>
+
+</div>
+
+<div id="allSpecialists"></div>
+
+<div class="textContainer getStarted">
+
+    <h1>Want some specific support?</h1>
+
+    <p>We have dedicated consultants in your area to help you make a plan.</p>
+
+    <p>We will let you know who your relevant consultant is and where they are based.</p>
+
+    <button type="button" onclick="displayForm('regForm')">Get Started</button>
+
+</div>
+
+<form id="regForm" action="">
+
+
+<div class="textContainer radioContainer">
+  
+  <h2>Which area do you need support in?</h2>
+
+  <p>
+    <input type="radio" id="wellbeing" name="supportArea" value="mhw" required>
+    <label for="wellbeing">Mental Health & Wellbeing</label>
+  </p>
+
+  <p>
+    <input type="radio" id="budget" name="supportArea" value="bs">
+    <label for="budget">Budget & Spending</label>
+</p>
+
+  <p>
+    <input type="radio" id="debt" name="supportArea" value="dm">
+    <label for="debt">Debt Management</label>
+  </p>
+
+  <p>
+    <input type="radio" id="energy" name="supportArea" value="eb">
+    <label for="energy">Energy Bills</label>
+  </p>
+  <p></p>
+
+
+</div>
+
+<hr>
+
+<div class="textContainer regionSelect">
+
+<label  for="region"><h2>Which region do you live in?</h2></label>
+
+  <select id="region" required>
+    <option value="" disabled selected>Select your region</option>
+    <option value="ne" >North East</option>
+    <option value="nw" >North West</option>
+    <option value="m" >Midlands</option>
+    <option value="se" >South East</option>
+    <option value="sw" >South West</option>
+  </select>
+  
+</div>
+
+<p id="invalidInput">Please complete the form.</p>
+
+<button type="button" id="submitTest" onclick="submitForm()">Submit</button>
+
+
+
+</form>
+
+<div class="outputContainer" id="outputDisplay">
+
+  <div class="formOutput">
+
+    <h2>Your Local Specialist is:</h2>
+
+    <h4 id="specialistName"></h4>
+  
+    <h2>For immediate support, please contact:</h2>
+
+    <h3>Hub Location:</h3> 
+    <h4 id="hubAddress"></h4>
+
+    <h3>Hub Phone Number:</h3> 
+    <h4 id="hubPhoneNumber"></h4>
+
+
+  </div>
+
+  <div class="callBack">
+    <p>For one-to-one support, we can arrange a call back from your local specialist.</p>
+
+    <button type="button" onclick="displayForm('callBackFormContainer')">Want a Call Back?</button>
+
+    
+  </div>
+
+    <div id="callBackFormContainer" action="">
+      <h1> <img src="images/phone.png" alt="Phone Icon" class="icon">Call Back</h1>
+      <h3>Enter your details below to receive a call back from <span id="specialistCallBack"></span>.</h3>
+
+      <form id="callBackForm">
+
+              <label for="firstName">First Name:</label>
+          <input type="text" id="firstName" name="firstName" placeholder="Your first name...">
+
+          <label for="lname">Last Name:</label>
+          <input type="text" id="lastName" name="lastName" placeholder="Your last name...">
+
+          <label for="phoneNumber">Contact Number:</label>
+          <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Your contact number...">
+
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email" placeholder="Your email...">
+
+
+          <label for="Info">Other information:</label>
+          <textarea id="infoBox" name="info" placeholder="Please let us know if you have any accomodations or vulnerabilites..." ></textarea>
+
+          <button type="button" id="submitContact">Submit</button>
+
+
+      </form>
+    </div>
+
+</div>
+
+<script src="script.js"></script>    
+
+</body>
+
+</html>
